@@ -1,7 +1,15 @@
 # README
 
-Map.html
+I'm using a Stimulus controller for the Google Maps stuff and it does work on first page load, though geolocation doesn't always on iPhone for some reason. That might have to do with user preferences but it's a problem for later. 
 
+For now, when I refresh the page the controller reconnects but the map dissappears. I'm doing something wrong but I can't figure out what.
+I've stripped everything down to the two relevant files and a stock Tailwind Rails 7 project.
+
+The turbo:load event listener was just to confirm that the page was being reloaded, I've tried disabling turbolinks on this view and that doesn't help. 
+
+## Map.html
+
+```
 <div data-controller="map">
   <div class="w-full text-right pr-12 font-righteous text-4xl leading-[4.6rem] text-zinc-800">Google Map</div>
 
@@ -10,7 +18,7 @@ Map.html
   </div>
 
   <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmO7h4B2Unq_S5houcwM9OsL7nAx_oHYE&callback=initMap" defer>
+    src="https://maps.googleapis.com/maps/api/js?key=***************&callback=initMap" defer>
   </script>
 
   <script>
@@ -19,9 +27,11 @@ Map.html
     })
   </script>
 </div>
+```
 
-map_controller.js
+## map_controller.js
 
+```
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
@@ -88,3 +98,4 @@ export default class extends Controller {
     this.infoWindow.open(map);
   }
 }
+```
