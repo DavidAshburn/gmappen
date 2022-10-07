@@ -1,17 +1,10 @@
-<div data-controller="map">
-  <div class="w-full text-right pr-12 font-righteous text-4xl leading-[4.6rem] text-zinc-800">Refreshing doesn't work</div>
-
-  <div class="flex w-full justify-center">
-    <div id="map" class="w-[80vw] h-[80vh]"></div>
+<div class="flex flex-col items-center"> 
+  <div class="flex flex-row w-full justify-center">
+    <h2 class="font-bold sm:text-8xl text-6xl font-righteous text-zinc-800">Howdy</h2>
   </div>
+  <h3 class="font-bold sm:text-4xl text-2xl font-righteous text-zinc-800"></h3>
 
-  <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmO7h4B2Unq_S5houcwM9OsL7nAx_oHYE&callback=initMap" defer>
-  </script>
-
-  <script>
-    document.addEventListener('turbo:load', function () {
-      console.log('turbo load') 
-    })
-  </script>
+  <div class="flex flex-col w-full justify-center gap-2 mt-4">
+    <%= link_to 'Map', home_map_path, class: "btn-green" %>
+  </div>
 </div>

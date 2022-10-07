@@ -2,17 +2,13 @@ import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
   static targets = [ 
-    "mapPane",
-    "latitude",
-    "longitude"
+    "mapPane"
   ]
 
   connect() {
     this.map;
     this.infoWindow;
     this.pos;
-
-    this.longitudeTarget.innerText = "Connected";
 
     window.initMap = function()  {
       this.map = new google.maps.Map(document.getElementById("map"), {
@@ -59,12 +55,12 @@ export default class extends Controller {
   }
 
   handleLocationError(browserHasGeolocation, infoWindow, pos) {
-    infoWindow.setPosition(pos);
-    infoWindow.setContent(
+    this.infoWindow.setPosition(pos);
+    this.infoWindow.setContent(
       browserHasGeolocation
         ? "Error: The Geolocation service failed."
         : "Error: Your browser doesn't support geolocation."
     );
-    infoWindow.open(map);
+    this.infoWindow.open(map);
   }
 }

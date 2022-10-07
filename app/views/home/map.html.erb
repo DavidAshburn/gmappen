@@ -1,0 +1,17 @@
+<div data-controller="map">
+  <div class="w-full text-right pr-12 font-righteous text-4xl leading-[4.6rem] text-zinc-800">Google Map</div>
+
+  <div class="flex w-full justify-center border border-black">
+    <div id="map" class="w-[80vw] h-[80vh]"></div>
+  </div>
+
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmO7h4B2Unq_S5houcwM9OsL7nAx_oHYE&callback=initMap" defer>
+  </script>
+
+  <script>
+    document.addEventListener('turbo:load', function () {
+      console.log('turbo load') 
+    })
+  </script>
+</div>
