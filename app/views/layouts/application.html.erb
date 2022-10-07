@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Gmappen</title>
+    <title>Google Maps API</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -9,10 +9,12 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <script src="https://kit.fontawesome.com/5b70548259.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?&family=Lato:wght@400;700&family=Monoton&family=Questrial&family=Raleway:wght@300;400;600;700&family=Righteous&display=swap" rel="stylesheet">   
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+    <main class="container mt-5 p-5 flex flex-col items-center">
       <%= yield %>
     </main>
   </body>
